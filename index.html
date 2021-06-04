@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./foto.js"></script>
+</head>
+<body>
+    <div class="file-upload-secsion" onclick="selectImage()"> 
+        <input id="foto-file" type="file" /> Select Image
+      </div>
+      <div class="upper-buttons-section">
+        <table class="buttons-table">
+            <tr>
+                <td><button class="operation-btn" onclick="crop()">Crop</button></td>
+                <td><button class="operation-btn" onclick="flipVertical()">Flip</button></td>
+                <td>
+                    <button class="operation-btn" onclick="displayRange()">Rotate
+                        <input type="range" id="rotate-range" value="0" min="0" max="360" onchange="rotate(this)"/>
+                    </button>
+                </td>
+            </tr>
+        </table>
+      </div>
+      <div class="image-container">
+        <image id="foto-image" class="image"/>
+      </div>
+      <div class="buttons-section">
+        <table class="buttons-table">
+            <tr>
+                <td><button class="operation-btn" onclick="makeGrayScale()">GrayScale</button></td>
+                <td><button class="operation-btn" onclick="makeBright()">Brighter</button></td>
+                <td><button class="operation-btn" onclick="makeDark()">Darker</button></td>
+            </tr>
+            <tr>
+                <td><button class="operation-btn" onclick="makeBrur()">Blur</button></td>
+                <td><button class="operation-btn" onclick="makeEmboss()">Emboss</button></td>
+                <td><button class="operation-btn" onclick="makeSharp()">Sharp</button></td>
+            </tr>
+            <tr>
+                <td> 
+                    <input type="color" id="color-picker" value="#000000" oninput="makeColorize(this)"/>
+                    <button class="operation-btn" onclick="openColorize()">Colorize</button>
+                </td>
+                <td> 
+                    <input type="color" id="color-apply" value="#000000" oninput="applyfilter(this)"/>
+                    <button class="operation-btn" onclick="openColorFilter()">Color Filter</button>
+                </td>
+                <td> 
+                    <button class="operation-btn" type="color" oninput="transparent()">
+                    <div id ="color-preview" ></div>Transparent
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3"><button class="operation-btn dowload-btn" onclick="dowload()">Dowload</button></td>
+            </tr>
+        </table>
+      </div>
+
+      <script src="./app.js"> </script>
+</body>
+</html>
